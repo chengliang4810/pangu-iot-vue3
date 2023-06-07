@@ -157,6 +157,20 @@ export const dynamicRoutes: RouteOption[] = [
         meta: { title: '修改生成配置', activeMenu: '/tool/gen', icon: '' }
       }
     ]
+  },
+  {
+    path: '/product/detail',
+    component: Layout,
+    hidden: true,
+    permissions: ['iot:product:list'],
+    children: [
+      {
+        path: 'index',
+        component: () => import('@/views/iot/product/detail.vue'),
+        name: 'ProductDetail',
+        meta: { title: '产品详情', activeMenu: '/product/product', icon: '' }
+      }
+    ]
   }
 ];
 
